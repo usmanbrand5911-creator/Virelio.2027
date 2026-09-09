@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
-import { auth, db } from "@/lib/firebase";
+import { auth, db, googleProvider } from "@/lib/firebase";
 
 export default function AuthModal() {
   const [isLogin, setIsLogin] = useState(true);
@@ -35,9 +35,8 @@ export default function AuthModal() {
     setError("");
     setLoading(true);
     try {
-      const provider = new GoogleAuthProvider();
-      provider.setCustomParameters({ prompt: "select_account" });
-      const result = await signInWithPopup(auth, provider);
+      googleProvider.setCustomParameters({ prompt: "select_account" });
+      const result = await signInWithPopup(auth, googleProvider);
       const user = result.user;
       
       await setDoc(doc(db, "users", user.uid), {
@@ -99,7 +98,7 @@ export default function AuthModal() {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/95 backdrop-blur-md overflow-y-auto">
       <div className="w-full max-w-md bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-2xl my-8">
         <div className="text-center mb-6">
           <h1 className="text-3xl font-black text-amber-400 tracking-wider">VIRELIO</h1>
@@ -208,7 +207,7 @@ export default function AuthModal() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-2.5 bg-amber-500 text-black font-bold rounded-lg hover:bg-amber-400 transition-all text-sm mt-2 disabled:opacity-50"
+            className="w-full py-2.5 bg-amber-500 text-black font-bold rounded-lg hover:bg-amber-400 transition-all text-sm mt-2 disabled:opacity-50 shadow-lg"
           >
             {loading ? "Processing..." : isLogin ? "Login to Platform" : "Create Account"}
           </button>

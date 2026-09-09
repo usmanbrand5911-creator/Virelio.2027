@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import Link from "next/link";
 import "./globals.css";
@@ -46,6 +46,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="flex items-center gap-3">
                 <Link href="/wallet" className="bg-amber-500 text-black font-semibold px-4 py-1.5 rounded-lg text-sm hover:bg-amber-400">Wallet</Link>
                 <Link href="/admin" className="bg-slate-800 text-amber-400 font-semibold px-4 py-1.5 rounded-lg text-sm border border-slate-700">Admin</Link>
+                <button 
+                  onClick={() => signOut(auth)} 
+                  className="bg-red-500/20 text-red-400 border border-red-500/30 px-3 py-1.5 rounded-lg text-sm hover:bg-red-500/30 font-semibold"
+                >
+                  Logout
+                </button>
               </div>
             </header>
             <main>{children}</main>
