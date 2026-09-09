@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 
