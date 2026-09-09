@@ -1,9 +1,22 @@
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 'use client';
 
 import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import './globals.css';
+
+
+  const handleGoogleLogin = async () => {
+    try {
+      const { auth } = await import("@/lib/firebase").catch(() => import("../lib/firebase"));
+      const provider = new GoogleAuthProvider();
+      provider.setCustomParameters({ prompt: "select_account" });
+      await signInWithPopup(auth, provider);
+    } catch (err) {
+      console.error("Google Auth Error:", err);
+    }
+  };
 
 export default function RootLayout({
   children,
