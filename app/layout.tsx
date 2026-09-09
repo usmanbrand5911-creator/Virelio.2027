@@ -1,5 +1,6 @@
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 'use client';
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
 
 import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
