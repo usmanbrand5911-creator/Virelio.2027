@@ -99,7 +99,7 @@ export default function AdminPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    const correctPass = process.env.NEXT_PUBLIC_ADMIN_PASSCODE || 'admin123';
+    const correctPass = process.env.NEXT_PUBLIC_ADMIN_PASSCODE || 'usman804567';
     if (passcode === correctPass) {
       setIsAuthenticated(true);
       localStorage.setItem('admin_auth', 'true');

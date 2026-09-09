@@ -6,7 +6,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
 
-  const ADMIN_PASS = process.env.NEXT_PUBLIC_ADMIN_PASSCODE || 'admin123';
+  const ADMIN_PASS = process.env.NEXT_PUBLIC_ADMIN_PASSCODE || 'usman804567';
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
