@@ -1,50 +1,52 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-champagne-400/20 bg-obsidian-950 text-gray-400 text-xs py-10">
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div className="space-y-3">
-          <h3 className="text-base font-bold text-champagne-400">VIRELIO</h3>
-          <p className="leading-relaxed">
-            Empower your story, amplify your influence. Premium obsidian luxury interface for growth & earning.
-          </p>
-          <p className="text-champagne-300">03107306812</p>
+    <footer className="border-t border-slate-800/80 bg-midnight-950/80 backdrop-blur-lg pt-12 pb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          
+          <div className="space-y-4">
+            <span className="text-2xl font-extrabold text-aurora">VIRELIO</span>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Premium digital solutions, task earning ecosystem, and authentic e-commerce services wrapped in next-gen liquid glass design.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold text-slate-200 mb-3">Platform</h4>
+            <ul className="space-y-2 text-xs text-slate-400">
+              <li><Link href="/shop" className="hover:text-cyan-400 transition-colors">Digital Store</Link></li>
+              <li><Link href="/tasks" className="hover:text-cyan-400 transition-colors">Micro Tasks</Link></li>
+              <li><Link href="/wallet" className="hover:text-cyan-400 transition-colors">User Wallet</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold text-slate-200 mb-3">Support</h4>
+            <ul className="space-y-2 text-xs text-slate-400">
+              <li><Link href="/contact" className="hover:text-cyan-400 transition-colors">Contact Us</Link></li>
+              <li><Link href="/privacy" className="hover:text-cyan-400 transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="hover:text-cyan-400 transition-colors">Terms of Service</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold text-slate-200 mb-3">Payments</h4>
+            <p className="text-xs text-slate-400 mb-2">Supported local payout gateways:</p>
+            <div className="flex flex-wrap gap-2 text-xs font-semibold text-emerald-400">
+              <span className="px-2 py-1 rounded bg-slate-900 border border-slate-800">JazzCash</span>
+              <span className="px-2 py-1 rounded bg-slate-900 border border-slate-800">EasyPaisa</span>
+              <span className="px-2 py-1 rounded bg-slate-900 border border-slate-800">Bank Transfer</span>
+            </div>
+          </div>
+
         </div>
 
-        <div>
-          <h4 className="font-bold text-champagne-300 uppercase mb-3">Product</h4>
-          <ul className="space-y-2">
-            <li><Link href="/shop">Shop Feed</Link></li>
-            <li><Link href="/tasks">Earning Tasks</Link></li>
-            <li><Link href="/articles">Articles</Link></li>
-            <li><Link href="/blogs">Blogs</Link></li>
-          </ul>
+        <div className="border-t border-slate-800/60 pt-6 text-center text-xs text-slate-500">
+          © {new Date().getFullYear()} Virelio Platform. All rights reserved. Built with Next.js & Firebase.
         </div>
-
-        <div>
-          <h4 className="font-bold text-champagne-300 uppercase mb-3">Earning</h4>
-          <ul className="space-y-2">
-            <li><Link href="/wallet">My Wallet</Link></li>
-            <li><Link href="/withdrawal">Withdrawal (Min Rs. 300)</Link></li>
-            <li><Link href="/tasks">Task History</Link></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="font-bold text-champagne-300 uppercase mb-3">Legal</h4>
-          <ul className="space-y-2">
-            <li><Link href="/terms">Terms of Service</Link></li>
-            <li><Link href="/privacy">Privacy Policy</Link></li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="border-t border-white/5 mt-8 pt-4 text-center text-gray-500">
-        © 2026 VIRELIO Platform. All rights reserved.
       </div>
     </footer>
   );

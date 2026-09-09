@@ -1,33 +1,33 @@
-import type { Config } from 'tailwindcss';
+import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: 'class',
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        obsidian: {
-          950: '#07080A',
-          900: '#0B0C10',
-          800: '#12141C',
-          700: '#1C1F2C',
+        midnight: {
+          950: "#070A11",
+          900: "#0B0F19",
+          800: "#111827",
+          700: "#1F2937",
         },
-        champagne: {
-          300: '#E1C44C',
-          400: '#D4AF37',
-          500: '#B89325',
-        },
-        virelio: {
-          blue: '#0F2B48',
-          accent: '#1A4B7C',
+        aurora: {
+          cyan: "#06B6D4",
+          violet: "#8B5CF6",
+          emerald: "#10B981",
+          pink: "#EC4899",
         },
       },
       backgroundImage: {
-        'gold-gradient': 'linear-gradient(135deg, #F5ECBE 0%, #D4AF37 50%, #B89325 100%)',
+        "aurora-gradient": "radial-gradient(ellipse at top, rgba(139, 92, 246, 0.15), rgba(6, 182, 212, 0.1) 50%, transparent 80%)",
+        "glass-gradient": "linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%)",
+      },
+      backdropBlur: {
+        glass: "16px",
       },
     },
   },

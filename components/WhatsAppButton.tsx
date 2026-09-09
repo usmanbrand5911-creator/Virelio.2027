@@ -1,7 +1,32 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "@/lib/firebase";
+
 export default function WhatsAppButton() {
+  const [whatsappNumber, setWhatsappNumber] = useState("+923001234567");
+
+  useEffect(() => {
+    const fetchWhatsAppNumber = async () => {
+      try {
+        const docRef = doc(db, "settings", "footerConfig");
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists() && docSnap.data().whatsappNumber) {
+          setWhatsappNumber(docSnap.data().whatsappNumber);
+        }
+      } catch (err) {
+        console.error("Error fetching WhatsApp number:", err);
+      }
+    };
+    fetchWhatsAppNumber();
+  }, []);
+
+  const cleanNumber = whatsappNumber.replace(/[^0-9]/g, "");
+
   return (
     <a
-      href="https://wa.me/?text=Hello%20Virelio%20Support,%20I%20need%20assistance."
+      href={`https://wa.me/${cleanNumber}?text=Hello%20Virelio%20Support,%20I%20need%20assistance.`}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-3.5 rounded-full shadow-2xl hover:scale-110 transition-all flex items-center justify-center group"
