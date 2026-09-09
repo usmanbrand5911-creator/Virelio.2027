@@ -1,20 +1,13 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-
-export default function PublicTerms() {
-  const [content, setContent] = useState('');
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setContent(localStorage.getItem('admin_terms') || 'By accessing and using VIRELIO, you agree to comply with our community guidelines, task verification policies, and payout terms.');
-    }
-  }, []);
-
+export default function TermsPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12 space-y-6">
-      <h1 className="text-4xl font-black text-white">Terms & Conditions</h1>
-      <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 text-slate-300 text-sm leading-relaxed whitespace-pre-line">
-        {content}
+    <div className="p-6 max-w-4xl mx-auto space-y-6">
+      <h1 className="text-3xl font-black text-amber-400">Terms & Conditions</h1>
+      <div className="bg-slate-900 border border-slate-800 p-6 rounded-xl space-y-4 text-slate-300 text-sm">
+        <p>Welcome to Virelio. By accessing our platform, you agree to comply with our community guidelines and terms of service.</p>
+        <h3 className="font-bold text-white">1. Account Security</h3>
+        <p>Users are responsible for maintaining the confidentiality of their login credentials and Firebase accounts.</p>
+        <h3 className="font-bold text-white">2. Fair Usage</h3>
+        <p>Any malicious activity or automated bot usage will result in permanent account suspension.</p>
       </div>
     </div>
   );

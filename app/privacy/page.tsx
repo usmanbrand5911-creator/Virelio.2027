@@ -1,20 +1,11 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-
-export default function PublicPrivacy() {
-  const [content, setContent] = useState('');
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setContent(localStorage.getItem('admin_privacy') || 'Your privacy is important to us. VIRELIO collects only necessary account details and transaction data to process rewards.');
-    }
-  }, []);
-
+export default function PrivacyPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12 space-y-6">
-      <h1 className="text-4xl font-black text-white">Privacy Policy</h1>
-      <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 text-slate-300 text-sm leading-relaxed whitespace-pre-line">
-        {content}
+    <div className="p-6 max-w-4xl mx-auto space-y-6">
+      <h1 className="text-3xl font-black text-amber-400">Privacy Policy</h1>
+      <div className="bg-slate-900 border border-slate-800 p-6 rounded-xl space-y-4 text-slate-300 text-sm">
+        <p>Your privacy is important to us. We collect necessary authentication data to secure your account and manage your dashboard.</p>
+        <h3 className="font-bold text-white">Data Protection</h3>
+        <p>All data stored in Firebase Firestore is encrypted and handled securely. We never share your personal information with third parties.</p>
       </div>
     </div>
   );
