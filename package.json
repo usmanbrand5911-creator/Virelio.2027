@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build",
-    "start": "next start",
-    "postinstall": "npx prisma generate"
+    "start": "next start"
   },
   "dependencies": {
     "clsx": "^2.1.0",
