@@ -5,16 +5,10 @@ process.env.DATABASE_URL = dbUrl;
 
 try {
   console.log('Generating Prisma Client...');
-  execSync('npx prisma generate --schema=prisma/schema.prisma', { 
-    stdio: 'inherit', 
-    env: { ...process.env, DATABASE_URL: dbUrl } 
-  });
+  execSync('npx prisma generate', { stdio: 'inherit', env: { ...process.env, DATABASE_URL: dbUrl } });
 } catch (err) {
   console.log('Prisma generate warning skipped...');
 }
 
 console.log('Building Next.js app...');
-execSync('npx next build', { 
-  stdio: 'inherit', 
-  env: { ...process.env, DATABASE_URL: dbUrl } 
-});
+execSync('npx next build', { stdio: 'inherit', env: { ...process.env, DATABASE_URL: dbUrl } });
