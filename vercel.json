@@ -1,3 +1,11 @@
 {
-  "installCommand": "npm install --legacy-peer-deps"
+  "installCommand": "npm install --legacy-peer-deps",
+  "env": {
+    "DATABASE_URL": "postgresql://neondb_owner:npg_gY1Pq2vLkoXI@ep-long-cell-a18t1j4k-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require"
+  },
+  "build": {
+    "env": {
+      "DATABASE_URL": "postgresql://neondb_owner:npg_gY1Pq2vLkoXI@ep-long-cell-a18t1j4k-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require"
+    }
+  }
 }
