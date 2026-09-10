@@ -1,4 +1,4 @@
 {
   "installCommand": "npm install --legacy-peer-deps",
-  "buildCommand": "DATABASE_URL='postgresql://neondb_owner:npg_gY1Pq2vLkoXI@ep-long-cell-a18t1j4k-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require' npx prisma generate --schema=prisma/schema.prisma && next build"
+  "buildCommand": "npx prisma generate && next build"
 }
